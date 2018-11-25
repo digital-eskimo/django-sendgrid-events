@@ -1,7 +1,6 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import url
+from . import views
 
-
-urlpatterns = patterns(
-    "sendgrid_events.views",
-    url(r"^batch/$", "handle_batch_post", name="sendgrid_handle_batch_post")
-)
+urlpatterns = [
+    url(r"^batch/$", views.handle_batch_post, name="sendgrid_handle_batch_post")
+]
